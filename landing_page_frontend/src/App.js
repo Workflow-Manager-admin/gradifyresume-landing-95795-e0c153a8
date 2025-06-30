@@ -1,10 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Feedback from "./Feedback";
 
-// --- PUBLIC_INTERFACE
+/**
+ * --- PUBLIC_INTERFACE
+ * Main App component: Handles SPA + feedback page lightweight routing.
+ */
 function App() {
+  // Simple state to switch view between landing/feedback.
+  const [feedbackMode, setFeedbackMode] = useState(false);
+
   useEffect(() => {
     document.title = "Gradify Resume Builder – Craft a Stunning Resume in Minutes!";
+    // Hash-based feedback route for /#feedback, or ?feedback for fallback
+    function routeChangeListener() {
+      const hash = window.location.hash || "";
+      const search = window.location.search || "";
+      setFeedbackMode(
+        hash.includes("feedback") || search.includes("feedback")
+      );
+    }
+    window.addEventListener("hashchange", routeChangeListener);
+    window.addEventListener("popstate", routeChangeListener);
+    routeChangeListener();
+    return () => {
+      window.removeEventListener("hashchange", routeChangeListener);
+      window.removeEventListener("popstate", routeChangeListener);
+    };
   }, []);
+
+  if (feedbackMode) {
+    // Show Feedback modal
+    return <Feedback onBack={() => { window.location.hash = ""; setFeedbackMode(false); }} />;
+  }
 
   // PUBLIC_INTERFACE
   // Feature icons as SVGs
@@ -290,6 +317,14 @@ function App() {
               href="#"
             >
               How it works
+            </a>
+            {/* Feedback link */}
+            <a
+              className="hover:text-accent text-primary font-semibold px-4 py-1 rounded-lg transition-colors duration-200 ml-2 bg-white/50 dark:bg-black/40 shadow"
+              href="#feedback"
+              aria-label="Send Feedback"
+            >
+              <span role="img" aria-label="feedback" className="mr-1">💬</span> Feedback
             </a>
             <a
               href="https://twitter.com/"
