@@ -8,6 +8,14 @@
   --color-accent: #38BDF8;
   --color-secondary: #000000;
   --color-neutral: #f8fafc;
+  --color-bg-verylight: #F8F9FB;
+  --color-card-border: #E6E7EB;
+  --color-card-divider: #F1F2F4;
+  --color-heading: #262626;
+  --color-body: #4D4D4D;
+  --color-nav-muted: #7A869A;
+  --color-nav-border: #ECEDEF;
+  --color-btn-dark: #121212;
   --text-dark: #18181b;
 }
 
@@ -32,13 +40,30 @@ body {
 .text-accent { color: var(--color-accent) !important; }
 .bg-accent { background-color: var(--color-accent) !important; }
 
-/* Glassmorphism effect card */
-.glass-card {
-  background: rgba(255,255,255,0.55);
-  box-shadow: 0 6px 30px -6px rgba(55,55,130,0.12), 0 1.5px 16px 0 rgba(0,0,0,0.09);
-  backdrop-filter: blur(16px) saturate(1.4) !important;
-  border-radius: 1.5rem !important;
-  border: 1.5px solid rgba(230,230,255, 0.17);
+/* Card with strong radius for preview section */
+.card-strong {
+  border-radius: 18px !important;
+  box-shadow: 0 8px 32px -4px rgba(70,70,110,0.14), 0 2px 8px 0 rgba(28,28,44,0.09);
+  background: #fff;
+  border: 1.5px solid var(--color-card-border);
+}
+/* For white bg minimal section */
+.bg-verylight {
+  background: var(--color-bg-verylight);
+}
+.font-heading {
+  color: var(--color-heading) !important;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+}
+.font-subtle {
+  color: var(--color-body) !important;
+}
+.font-nav-muted {
+  color: var(--color-nav-muted) !important;
+}
+.border-card-divider {
+  border-color: var(--color-card-divider) !important;
 }
 
 .dark .glass-card {
