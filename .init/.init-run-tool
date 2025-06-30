@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> HOST=<host> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/gradifyresume-landing-95795-e0c153a8/landing_page_frontend"
+}
