@@ -353,7 +353,7 @@ function App() {
   }
 
   return (
-    <main className="font-sans bg-white dark:bg-black min-h-screen relative transition-colors duration-500">
+    <main className="font-sans bg-custom-gradient min-h-screen relative transition-colors duration-500">
       <MetaTags />
       {/* Floating accent */}
       <div className="fixed -top-[220px] -left-[100px] w-[450px] h-[450px] bg-accent/20 blur-3xl pointer-events-none z-0 opacity-80 animate-float-xy" />

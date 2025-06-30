@@ -17,6 +17,9 @@ module.exports = {
       boxShadow: {
         glass: '0 6px 30px -6px rgba(55,55,130,0.12), 0 1.5px 16px 0 rgba(0,0,0,0.09)',
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(135deg, #3fd0fb 0%, #3e40a1 40%, #9046d5 60%, #050505 100%)',
+      },
       animation: {
         'gradient-xy': 'gradient-move-xy 8s ease-in-out infinite',
         'fade-in-up': 'fadein-up 0.8s both',
